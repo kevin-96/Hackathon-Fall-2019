@@ -1,0 +1,67 @@
+*{
+	margin:0;
+    padding:0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#home-jumbotron{
+    background: url(../images/run.jpg);
+    min-height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#text{
+    margin: 10%;
+}
+
+#debt-text{
+    margin-left: 300px;
+    margin-right: 300px;
+}
+#home-section-text{
+    min-height: 300px;
+}
+
+#list-item{
+    margin-top: 20px;
+
+}
+
+#student-debt-jumbotron{
+    background-color: rgb(124, 233, 103);
+    padding: 20px;
+}
+
+#credit-card-debt-jumbotron{
+    background-color: rgb(233, 140, 103);
+    padding: 20px;
+}
+
+#student-debt-content{
+    min-height: 800px;
+    margin-top: 100px;
+}
+
+#credit-card-icon{
+    max-width: 200px;
+}
+
+#mortgage-and-auto-jumbotron{
+    background-color: rgb(238, 103, 125);
+    padding: 20px;
+    margin-bottom: 0%;
+}
+
+#house-icon{
+    max-width: 400px;
+    margin-top: 0%;
+}
+
+#mortgage-and-auto-content{
+    margin-top: 0%;
+}
+
+.sticky-offset{
+  top: 56px;
+}

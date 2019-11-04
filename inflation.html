@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Inflation Calculator</title>
+    <!-- <link rel="stylesheet" type="text/css" href="inflation.css" media="all" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/inflation.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-center">
+    <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="" width="30" height="30">
+      </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="debt.html">Information on Debt</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="inflation.html">Inflation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="help.html">Helpful Videos</a>
+      </li>
+    </ul>
+  </nav>
+    <div class="dark-overlay">
+
+    <div class="container">
+
+        <div class="row" style=" background-color:rgba(144, 238, 144, 0.945); padding-top: 15px; padding-bottom: 15px;">
+
+            <!-- Inflation Calculator -->
+            <div class="col-lg-6" style="border-right: 2px solid rgb(133, 133, 133)">
+                <div class="main_content pull-left" style="font-size: 22px;">
+                    <form action="#" id="formsub" method="post">
+                        Enter the amount of money:
+												<input id="amt-money" name="money" class="money form-crtl" type="number" min="1"
+                            size="9" value="1.00" required>
+                        <br /><br />
+                        Enter the initial year:
+                        <input id="start-year" name="first" class="onkeyup form-crtl" type="number" size="4" maxlength="4" min="1"
+                            value="1997">
+                        <br /><br />
+                        Enter the final year:
+                        <input id="end-year" name="final" class="onkeyup prevyearval form-crtl" type="number" size="4" min="1"
+                            maxlength="4" max="2019" value="2019">
+                        <br /><br />
+                        <div class="text-center"><input id="sub-form" type="button" class="btn btn-info btn-lg round" value="Submit" data-toggle="modal" data-target="#submitModal"></div>
+                    </form>
+                </div>
+                <script src="inflation.js"></script>
+            </div>
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+            <!-- About Section -->
+            <div class="col-lg-6 text-center" >
+                <h1>About</h1>
+                <p style="font-size: 24px; line-height:40px;">Inflation is the general increase in prices of goods and services, and the fall of
+                the value of money. The value of money is measured by the Consumer Price Index,
+                which is set to the value of 100 for the years 1982-1984. The percent fall in the
+                value of the dollar is then the percent change in the Consumer Price Index.</p>
+            </div>
+
+        </div>
+
+				<div class="row" style=" background-color:rgba(144, 238, 144, 0.945); padding-top: 15px; padding-bottom: 15px;">
+
+            <!-- Result -->
+            <div class="col-lg-6" style="border-right: 2px solid rgb(133, 133, 133);">
+							<p id="display" class="text-center"></p>
+            </div>
+
+    </div>
+</div>
+<div class="jumbotron text-center bg-dark fixed-bottom" style="margin-bottom:0" id="footer">
+</div>
+</body>
+<script>
+		//2019 - 1930
+		let consumerPriceIndices = Array(
+		255.7,251.1,245.1,240.0,237.0,236.7,233.0,229.6,224.9,218.1,214.5,215.3,207.3,201.6,195.3,188.9,184.0,179.9,177.1,172.2,
+		166.6,163.0,160.5,156.9,152.4,148.2,144.5,140.3,136.2,130.7,124.0,118.3,113.6,109.6,107.6,103.9,99.6,96.5,90.9,82.4,72.6,
+		65.2,60.6,56.9,53.8,49.3,44.4,41.8,40.5,38.8,36.7,34.8,33.4,32.5,31.5,31.0,30.6,30.3,29.9,29.6,29.2,28.9,28.1,27.2,26.8,26.9,
+		26.8,26.6,26.0,24.1,23.8,24.0,22.3,19.5,18.0,17.6,17.3,16.3,14.7,14.0,13.9,14.1,14.4,13.9,13.7,13.4,12.9,13.6,15.2,16.7
+		)
+
+		function getInflation(consumerInd1, consumerInd2, price) {
+		let change = (consumerInd2 - consumerInd1)/consumerInd1
+		return price*change
+		}
+
+		function inflationByYears(y1, y2, p) {
+		let consumerIndex1 = consumerPriceIndices[2019 - y1]
+		let consumerIndex2 = consumerPriceIndices[2019 - y2]
+		return getInflation(consumerIndex1, consumerIndex2, p)
+		}
+
+		function toMoneyFormat(p) {
+		if(p == "" || p == "0" || isNaN(p)) return "$0.00"
+		let money = "$" + Math.floor(p*100)
+		let a = money.substring(0, money.length - 2)
+		let b = money.substring(money.length - 2, money.length + 1)
+		return a + "." + b
+		}
+
+		let subBtnForm = document.getElementById("sub-form")
+		let displayResult = document.getElementById("display-result")
+
+		let startYear = document.getElementById("start-year")
+		let endYear = document.getElementById("end-year")
+		let amountMoney = document.getElementById("amt-money")
+		let display = document.getElementById("display")
+
+		subBtnForm.addEventListener("click", function(){
+		let y1 = parseFloat(startYear.value)
+		let y2 = parseFloat(endYear.value)
+		let m = parseFloat(amountMoney.value)
+		if(y1 && y2 && m) {
+			let inf = inflationByYears(y1, y2, m) + m
+			display.innerHTML = toMoneyFormat(m) + " in the year " + y1 + ", " +
+			" would be worth " + toMoneyFormat(inf) + " in " + y2
+		}
+		})
+
+</script>
+
+</html>

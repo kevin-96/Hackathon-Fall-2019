@@ -1,0 +1,151 @@
+*{
+	margin:0;
+    padding:0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    background:url(../images/money_flying.png) repeat scroll 0 0 #fffff4;
+    background-size: cover;
+    min-height: 600px;
+	font-size:18px;
+	padding-top:25px;
+	padding-bottom:25px;
+    line-height:18px;
+
+}
+
+/*Responsible for making the background image darker*/
+body .dark-overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* min-height: 600px; */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding-top: 150px;
+}
+
+img{
+	display:block;
+	max-width:100%;
+	height:auto;
+}
+
+dd {
+    display: block;
+    -webkit-margin-start: 40px;
+}
+
+p{
+	margin-bottom:10px;
+}
+
+.pull-left{
+    float:left
+}
+
+.pull-right{
+	float:right;
+}
+
+.text-center{
+	text-align:center
+}
+
+.logo{
+	margin-bottom:15px;
+}
+
+.btn-lg.round {
+    border-radius: 24px;
+    border-width: 2px;
+    border-color: #1B3552;
+    font-size: medium;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+
+
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.main_content{
+	width:70%;margin-right:5%;
+	margin-bottom:30px;
+}
+.main_content ul{
+	margin-left:40px;
+}
+.main_content ul li{
+	margin-bottom:5px;
+}
+.main_content .form-crtl{
+	font-size:16px;
+	margin-bottom:10px;
+	padding:5px;
+	border:1px solid #ccc;
+}
+.main_content input[type=submit]{
+	font-size:16px;
+	border:none;
+	cursor:pointer;
+	margin-bottom:10px;
+	padding:5px;
+	border:1px solid #ccc;
+}
+.right_sidebar{
+	width:25%
+}
+
+.main_content{
+	  width:100%;
+	  margin:0;
+  }
+	.right_sidebar{
+		width:100%;
+		margin-top:25px
+	}
+.main_content input[type="text"] {
+  margin-top: 5px;
+  width: 80%;
+}
+.logo{
+	text-align:center
+}
+
+.clear{
+	clear:both
+}
+.footer-wrapper{
+	padding-top:15px;
+	margin-top:15px;
+	border-top:1px solid #ccc;
+}
+.main_content .form-crtl{
+	font-size:16px;
+	margin-bottom:10px;
+	padding:5px;
+	border:1px solid #ccc;
+}
+.main_content .error {
+	color:red;
+	margin-left: 5px;
+}

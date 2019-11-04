@@ -1,0 +1,36 @@
+*{
+	margin:0;
+    padding:0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#explore-section .fas,
+#share-section .fas {
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+body {
+  background: #333;
+  color: #fff;
+}
+
+
+#head-section {
+  background: #BABCBB;
+}
+#home-section .home-inner {
+  padding-top: 150px;
+}
+
+#home-section .card-form {
+  opacity: 0.8;
+}
+
+#home-section .fas,
+#create-section .fas {
+  color: #008ed6;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
